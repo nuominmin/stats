@@ -1,7 +1,6 @@
 package stats
 
 import (
-	"fmt"
 	"sync"
 	"time"
 )
@@ -36,10 +35,6 @@ func UpdateStats() {
 
 		// 计算平均间隔
 		stats.avg = stats.totalTime / time.Duration(stats.count)
-
-		fmt.Printf("本次调用间隔: %v\n", stats.interval)
-		fmt.Printf("平均调用间隔: %v\n", stats.avg)
-		fmt.Printf("总调用次数: %d\n", stats.count)
 	}
 	stats.lastTime = now
 }
